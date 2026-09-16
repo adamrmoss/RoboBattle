@@ -1,0 +1,32 @@
+---
+description: Unit test scope and conventions
+globs: "**/src/test/java/**/*.java"
+alwaysApply: false
+---
+
+# Unit Testing
+
+Tests cover robot strategy and simulation logic. Maven wiring stays out of scope.
+
+## Where Tests Live
+
+- JUnit 5 in each module: `robots/src/test/java/` and `simulations/src/test/java/`
+- Mirror the main package layout of the code under test
+- Keep test types and methods domain-named, matching the robot or simulation they cover
+
+## What to Test
+
+- Robot strategy decisions (when to move, turn, fire, scan)
+- Simulation / battle-harness orchestration that contains branching or setup logic
+
+## What Not to Test
+
+- POM files, plugin config, and module wiring
+- Trivial getters with no branching
+- Robocode engine internals
+
+## Conventions
+
+- Use `org.junit.jupiter.api.Assertions` (`assertEquals`, `assertTrue`, and similar)
+- Do not add extra assertion libraries unless asked
+- Keep tests lecture-simple: `var` is fine; no lambdas unless the user asks

@@ -1,0 +1,31 @@
+---
+description: Minimal fix first, pattern matching, constraint checking before changes
+alwaysApply: true
+---
+
+# Agent Decision Guardrails
+
+Before making any code change, apply these checks.
+
+## Minimal Fix First
+
+1. Identify the **smallest fix** that solves the problem
+2. Prefer one-line changes or targeted edits over refactors
+3. Only do larger changes if the minimal fix is impossible or the user explicitly requests it
+4. In classtime edits, the smallest fix is the one you can explain on a projector
+
+## Pattern Matching
+
+Before adding or changing types or structure:
+
+1. Search the file and related code for existing naming and structure
+2. Match those patterns
+3. Do not introduce new conventions when existing ones apply
+
+## Constraint Checking
+
+Before implementing:
+
+1. List the user's stated constraints (for example JDK 21, no shell, lecture-simple Java)
+2. Confirm the change satisfies all of them
+3. Do not add logic that contradicts them
