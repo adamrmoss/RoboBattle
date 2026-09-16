@@ -1,9 +1,9 @@
 /**
- * Shared launch support for simulation apps (Robocode home, robot classpath).
+ * Shared launch support for simulation apps.
  * <p>
- * Decision: copy {@code robots/target/robots-1.0-SNAPSHOT.jar} into
- * {@code home/robots}. That is the folder Robocode scans for packaged robots.
- * JDK 21 needs {@code --add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED}
- * or the jar scan NPEs in {@code URLJarCollector}.
+ * Decision: Maven copies {@code robots.jar} into
+ * {@code target/robocode-home/robots} at {@code prepare-package}. This class only
+ * points {@code RobocodeEngine} at that home. JDK 21 still needs {@code --add-opens}
+ * for Robocode's jar scanner.
  */
 package com.dietzmoss.simulations.support;

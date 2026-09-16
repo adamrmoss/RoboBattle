@@ -1,6 +1,5 @@
 package com.dietzmoss.simulations.perimeter;
 
-import com.dietzmoss.robots.PerimeterPatrol;
 import com.dietzmoss.simulations.support.RobocodeWorkspace;
 import robocode.control.BattleSpecification;
 import robocode.control.BattlefieldSpecification;
@@ -29,7 +28,7 @@ public final class PerimeterPatrolSimulation
      */
     public static void main(String[] args)
     {
-        var home = RobocodeWorkspace.prepare(PerimeterPatrol.class);
+        var home = RobocodeWorkspace.prepare();
         var engine = new RobocodeEngine(home);
 
         // Show the battlefield so the class can watch the patrol.
