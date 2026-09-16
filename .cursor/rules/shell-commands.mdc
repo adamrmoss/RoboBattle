@@ -14,9 +14,16 @@ When a new module, dependency, or build step needs the Maven CLI, **provide the 
 Examples to propose (user runs these):
 
 ```bash
+robo-battle perimeter-patrol
 mvn -f /Volumes/Projects/RoboBattle/pom.xml compile
 mvn -f /Volumes/Projects/RoboBattle/pom.xml -pl robots test
 mvn -f /Volumes/Projects/RoboBattle/pom.xml -pl simulations test
 ```
 
 After the user has created a module, help with Java, wiring, and documentation — not with replacing the Maven step.
+
+## Scripts
+
+- Header comments describe **what** the script does and non-obvious prerequisites — not how to invoke it
+- Do **not** add `# Usage:` blocks
+- Start a battle with `/Volumes/Projects/RoboBattle/robo-battle <simulation>` — do not add a Makefile

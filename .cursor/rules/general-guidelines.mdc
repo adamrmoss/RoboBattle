@@ -21,8 +21,10 @@ alwaysApply: true
 ## Maven Layout
 
 - `/Volumes/Projects/RoboBattle/pom.xml` — aggregator; JDK **21** via `maven.compiler.source` / `maven.compiler.target`
-- `/Volumes/Projects/RoboBattle/robots/` — robot agents and strategies
-- `/Volumes/Projects/RoboBattle/simulations/` — battle runners; depends on `robots`
+- `/Volumes/Projects/RoboBattle/robots/` — agents and support classes reused by every simulation (`com.dietzmoss.robots`)
+- `/Volumes/Projects/RoboBattle/simulations/` — runnable simulation apps (`com.dietzmoss.simulations`); depends on `robots`
+
+Each simulation is started from a matching IDE Run configuration or `robo-battle <name>`.
 
 Do not add toolchain, wrapper, or extra JDK pinning unless asked. The parent POM already targets 21.
 

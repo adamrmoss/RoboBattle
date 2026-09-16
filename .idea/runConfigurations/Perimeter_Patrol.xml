@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Perimeter Patrol" type="Application" factoryName="Application">
+        <option name="MAIN_CLASS_NAME" value="com.dietzmoss.simulations.perimeter.PerimeterPatrolSimulation" />
+        <module name="simulations" />
+        <option name="VM_PARAMETERS" value="--add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.desktop/sun.awt=ALL-UNNAMED -Djava.security.manager=allow" />
+        <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/simulations" />
+        <method v="2">
+            <option name="Make" enabled="true" />
+        </method>
+    </configuration>
+</component>

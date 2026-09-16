@@ -58,4 +58,43 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>perimeter-patrol</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>run</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>${java.home}/bin/java</executable>
+                                    <classpathScope>runtime</classpathScope>
+                                    <arguments>
+                                        <argument>--add-opens</argument>
+                                        <argument>java.base/sun.net.www.protocol.jar=ALL-UNNAMED</argument>
+                                        <argument>--add-opens</argument>
+                                        <argument>java.base/java.lang.reflect=ALL-UNNAMED</argument>
+                                        <argument>--add-opens</argument>
+                                        <argument>java.desktop/sun.awt=ALL-UNNAMED</argument>
+                                        <argument>-Djava.security.manager=allow</argument>
+                                        <argument>-cp</argument>
+                                        <classpath/>
+                                        <argument>com.dietzmoss.simulations.perimeter.PerimeterPatrolSimulation</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>

@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Perimeter Patrol",
+            "request": "launch",
+            "mainClass": "com.dietzmoss.simulations.perimeter.PerimeterPatrolSimulation",
+            "projectName": "simulations",
+            "cwd": "${workspaceFolder}/simulations",
+            "vmArgs": "--add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.desktop/sun.awt=ALL-UNNAMED -Djava.security.manager=allow"
+        }
+    ]
+}
