@@ -1,0 +1,34 @@
+---
+description: Core project guidelines — answering, classroom setup, Maven layout
+alwaysApply: true
+---
+
+# General Guidelines
+
+- Always answer questions directly first
+- Use actual workspace paths in docs and examples; do not use placeholder paths
+- Never make code changes without an explicit user request
+- Comment and documentation rules live in `documentation-standards.mdc`
+- Java style lives in `java-standards.mdc`
+
+## Classroom
+
+- Students do **not** author this code. The teacher updates robots and simulations at classtime from their suggestions
+- Keep every change explainable on a projector in one sitting
+- Prefer the smallest edit that demonstrates the student's idea
+- Do not "improve" a strategy with advanced Java or extra tactics unless asked
+
+## Maven Layout
+
+- `/Volumes/Projects/RoboBattle/pom.xml` — aggregator; JDK **21** via `maven.compiler.source` / `maven.compiler.target`
+- `/Volumes/Projects/RoboBattle/robots/` — agents and support classes reused by every simulation (`com.dietzmoss.robots`)
+- `/Volumes/Projects/RoboBattle/simulations/` — runnable simulation apps (`com.dietzmoss.simulations`); depends on `robots`
+
+Each simulation is started from a matching IDE Run configuration or `robo-battle <name>`.
+
+Do not add toolchain, wrapper, or extra JDK pinning unless asked. The parent POM already targets 21.
+
+## Formatting
+
+- 4-space indent, UTF-8, final newline, trim trailing whitespace
+- Opening braces on their own line (Allman)

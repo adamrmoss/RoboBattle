@@ -1,0 +1,52 @@
+---
+description: How to document code so readers understand what it does
+globs: "**/*.java"
+alwaysApply: true
+---
+
+# Documentation Standards
+
+Documentation has **two layers**. Both are required where they apply. They answer different questions and **do not replace each other**.
+
+| Layer | Question it answers | Where |
+|-------|---------------------|--------|
+| **Public contract** | What does this API do? What goes in and out? | Javadoc on public types and methods |
+| **Algorithm** | How does this implementation work step by step? | `//` comments before each logical block inside method bodies |
+
+When the user asks to document code, they mean **both** unless they specify otherwise. Students will read this on a projector — keep both layers plain-language.
+
+Architecture and system decisions for maintainers live in `package-info.java` — see `maintainer-documentation.mdc`.
+
+## Public Contract (Required on Public API)
+
+- `/**` Javadoc on public types and public methods
+- `@param` for each method parameter
+- `@return` when the method returns a value
+- Keep summaries concise and action-oriented
+
+## Algorithm Comments (Required in Method Bodies)
+
+- Add a brief `//` comment on its own line **before each logical block**
+- Cover every distinct step: validation, branching, movement, firing, scanning
+- Write action-oriented sentences starting with verbs ("Turn the gun toward the scanned robot")
+- Apply to **public and private methods alike** when the body has non-trivial logic
+- **Never inline** — comments always sit on their own line above the code they describe
+- Skip body comments only for truly trivial one-liners
+
+## What Good Looks Like
+
+```java
+/**
+ * Fire at a robot that was just scanned.
+ *
+ * @param event the scan event from Robocode
+ */
+public void onScannedRobot(ScannedRobotEvent event)
+{
+    // Turn the gun toward the scanned robot.
+    turnGunRight(event.getBearing());
+
+    // Fire a full-power shot.
+    fire(3.0);
+}
+```

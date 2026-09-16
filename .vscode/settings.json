@@ -1,0 +1,8 @@
+{
+    "editor.codeLens": false,
+    "editor.inlayHints.enabled": "off",
+    "editor.parameterHints.enabled": false,
+    "java.inlayHints.parameterNames.enabled": "none",
+    "java.debug.settings.enableRunDebugCodeLens": false,
+    "java.configuration.updateBuildConfiguration": "disabled"
+}

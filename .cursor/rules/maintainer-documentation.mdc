@@ -1,0 +1,19 @@
+---
+description: Maintainer in-source docs for architecture, decisions, and implementation
+alwaysApply: true
+---
+
+# Maintainer Documentation
+
+In-source maintainer docs are a **third layer** next to the public contract and algorithm comments in `documentation-standards.mdc`. They record **why** the system is shaped this way.
+
+| Layer | Question | Where |
+|-------|----------|--------|
+| **Architecture / decisions** | Why this module, package, or approach? | `package-info.java` and type-level Javadoc on support types |
+
+## Keep Current
+
+- When adding a module, package, agent, or simulation, update the `package-info.java` for that package in the same change
+- Document decisions (for example why robots live in `robots`, how a simulation is launched) — not a restatement of the code
+- Use real workspace paths and Maven execution ids
+- Do not invent a parallel wiki or docs site unless asked

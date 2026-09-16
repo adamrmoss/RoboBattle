@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Run a named simulation on JDK 21. Homebrew mvn otherwise starts JDK 25.
+# The name must match a Maven profile in the simulations module.
+
+set -euo pipefail
+
+simulation="${1:?missing simulation name}"
+
+export JAVA_HOME="$(/usr/libexec/java_home -v 21)"
+exec mvn -pl simulations -am -P"${simulation}" package

@@ -1,0 +1,50 @@
+---
+description: Java coding standards for lecture-friendly Robocode
+globs: "**/*.java"
+alwaysApply: false
+---
+
+# Java Coding Standards
+
+- Prefer explicit `public`, `protected`, or `private` on types and members; do not rely on package-private by omission
+- Always use braces `{ }` for all control structures, even single-line blocks
+- Opening braces on their own line (Allman)
+- Add line breaks between logical groups of code
+- `var` is fine for local variables
+- Enums are fine
+- Do not use streams, lambdas, method references, or records unless the user asks
+- Prefer `switch` over a chain of `if` / `else if`
+- Prefer `for` / `while` and small methods
+- Do not force `this.` for instance members; use it only when a name is shadowed
+- Always include a space after type cast operators (e.g. `(int) value`)
+- When a method signature or argument list spans multiple lines, place the closing `)` on its own line
+- For documentation comments, see `documentation-standards.mdc`
+
+```java
+// BAD
+if (event.getDistance() < 100) fire(3);
+if (mode == 1)
+{
+    ahead(100);
+}
+else if (mode == 2)
+{
+    back(100);
+}
+
+// GOOD
+if (event.getDistance() < 100)
+{
+    fire(3.0);
+}
+
+switch (mode)
+{
+    case 1:
+        ahead(100);
+        break;
+    case 2:
+        back(100);
+        break;
+}
+```
